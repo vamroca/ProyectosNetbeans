@@ -34,22 +34,33 @@ public class Escalones extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Graphics paper = panel.getGraphics();
+//
+//        int x;
+//        int y;
+//        paper.setColor(Color.white);
+//        paper.fillRect(0, 0, 250, 200);
+//        y = 5;
+//        for (int escalones = 1; escalones <= 5; escalones++) {
+//            x = 5;
+//            for (int cont = 1; cont <= 5; cont++) {
+//                paper.setColor(Color.BLACK);
+////                paper.drawRect(x - y + x - y, y + x + y + x, 20, 20);
+//                paper.drawRect(x, y + x + y + x, 20, 20);
+//                x = x + 19;
+//            }
+//            y = y + 19;
+//
+//        }
 
-        int x;
-        int y;
+        int x = 1;
+        int xs = 10;
         paper.setColor(Color.white);
         paper.fillRect(0, 0, 250, 200);
-        y = 5;
-        for (int escalones = 1; escalones <= 5; escalones++) {
-            x = 5;
-            for (int cont = 1; cont <= 5; cont++) {
-                paper.setColor(Color.BLACK);
-//                paper.drawRect(x - y + x - y, y + x + y + x, 20, 20);
-                paper.drawRect(x, y + x + y + x, 20, 20);
-                x = x + 19;
-            }
-            y = y + 19;
-
-        }
+        do {
+            paper.setColor(Color.BLACK);
+            paper.drawRect(x * xs, x * xs, 10, 10);
+            paper.drawRect(xs, x * xs, 10, 10);
+            x++;
+        } while (x <= 5);
     }
 }
