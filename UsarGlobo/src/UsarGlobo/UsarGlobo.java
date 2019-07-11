@@ -45,10 +45,10 @@ public class UsarGlobo extends JFrame implements ActionListener {
         window.add(btnarriba);
         btnarriba.addActionListener(this);
 
-        Globo globo1 = new Globo(10, 10, 50);
-        Globo globo2 = new Globo(50, 50);
-        Globo globo3 = new Globo(100);
-        
+//        Globo globo1 = new Globo(10, 10, 50);
+//        Globo globo2 = new Globo(50, 50);
+//        Globo globo3 = new Globo(100);
+        globo = new Globo();
 //       Globo globo = new Globo(10,10,50);
 
         txtexto = new JTextField(6);
@@ -86,23 +86,23 @@ public class UsarGlobo extends JFrame implements ActionListener {
         private int d = 20;
         private Color colores;
 //-----------        
-        public Globo(int xInicial, int yInicial,  int diametroInicial){
-        x = xInicial;
-        y = yInicial;
-        d = diametroInicial;
-        }
+//        public Globo(int xInicial, int yInicial,  int diametroInicial){
+//        x = xInicial;
+//        y = yInicial;
+//        d = diametroInicial;
+//        }
 //-----------
-        public Globo(int xInicial, int yInicial){
-        x = xInicial;
-        y = yInicial;
-        d = 20;
-        }
+//        public Globo(int xInicial, int yInicial){
+//        x = xInicial;
+//        y = yInicial;
+//        d = 20;
+//        }
 //-----------        
-        public Globo(int diametro){
-        x = x;
-        y = y;
-        d = diametro;
-        }
+//        public Globo(int diametro){
+//        x = x;
+//        y = y;
+//        d = diametro;
+//        }
 
         public int getX() {
             return x;
