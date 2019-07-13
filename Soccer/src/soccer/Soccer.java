@@ -10,7 +10,7 @@ public class Soccer extends JFrame implements ActionListener {
     private JButton btn;
     private JPanel panel;
     private Futbol futbol;
-//    private Pelota pelota;
+    private Pelota pelota;
 
     public static void main(String[] args) {
         Soccer marco = new Soccer();
@@ -32,21 +32,27 @@ public class Soccer extends JFrame implements ActionListener {
         btn = new JButton("aceptar");
         window.add(btn);
 
-        futbol = new Futbol();
-
+        pelota = new Pelota(panel);
+        futbol = new Futbol(panel);
     }
 
     public void actionPerformed(ActionEvent e) {
-
+        Graphics papel = panel.getGraphics();
+//        JPanel panel1 = pelota.panel;
+        papel.setColor(Color.white);
+        papel.fillRect(0, 0, 250, 250);  
+        pelota.animar();
+        futbol.animar();
+//        futbol.animar();
     }
 
     public class Pelota {
 
         private JPanel panel;
-        private int x = 7, cambioX = 7;
-        private int y = 0, cambioY = 2;
-        private final int diametro = 10;
-        private final int anchura = 100, altura = 100;
+        protected int x = 7, cambioX = 7;
+        protected int y = 0, cambioY = 2;
+        protected final int diametro = 10;
+        protected final int anchura = 100, altura = 100;
 
         public Pelota(JPanel elPanel) {
             panel = elPanel;
@@ -66,7 +72,7 @@ public class Soccer extends JFrame implements ActionListener {
 
         private void rebotar() {
             if (x <= 0 || x >= anchura) {
-                cambioX = -cambioY;
+                cambioX = -cambioX;
             }
             if (y <= 0 || y >= altura) {
                 cambioY = -cambioY;
@@ -87,7 +93,33 @@ public class Soccer extends JFrame implements ActionListener {
 
     }
 
-    public class Futbol{
+    public class Futbol extends Pelota {
+
+        protected int cancha = 200;
+
+        public Futbol(JPanel elPanel) {
+            super(elPanel);
+        }
+
+        public void animar() {
+            rebotar();
+            dibujar();
+        }
+
+        private void rebotar() {
+            if (x >= 0 || x <= cancha) {
+                cambioX = -cambioX;
+            }
+            if (y <= 0 || y >= altura) {
+                cambioY = -cambioY;
+            }
+        }
+
+        private void dibujar() {
+            Graphics papel = panel.getGraphics();
+            papel.setColor(Color.red);
+            papel.fillOval(x, x, diametro, diametro);
+        }
 
     }
 

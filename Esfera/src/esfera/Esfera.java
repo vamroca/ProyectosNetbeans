@@ -48,7 +48,6 @@ public class Esfera extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Graphics papel = panel.getGraphics();
         Object click = e.getSource();
-
         if (click == btnderecha) {
             pelota.moverDerecha(20);
         } else {
@@ -56,8 +55,8 @@ public class Esfera extends JFrame implements ActionListener {
         }
 
 //        esferas.mostrar(papel);
-//        papel.setColor(Color.white);
-//        papel.fillRect(0, 0, 200, 200);
+        papel.setColor(Color.white);
+        papel.fillRect(0, 0, 200, 200);
         pelota.mostrar(papel);
 //        EsferaColoreada.mostrar(papel);        
 
@@ -76,6 +75,7 @@ public class Esfera extends JFrame implements ActionListener {
         }
 
         public void mostrar(Graphics papel) {
+            
             papel.drawOval(x, y, 20, 20);
         }
     }
@@ -103,6 +103,11 @@ public class Esfera extends JFrame implements ActionListener {
         public void moverIzquierda(int px) {
             x = x - px;
         }
+
+        public void mostrar(Graphics papel) {
+            papel.setColor(Color.yellow);
+            papel.drawOval(x, y, 20, 20);
+        }
     }
 
     public class EsferaColoreada extends Esferas {
@@ -116,6 +121,5 @@ public class Esfera extends JFrame implements ActionListener {
 //        public void mostrar(Graphics papel) {
 //            papel.fillOval(x, y, 20, 20);
 //        }
-
     }
 }

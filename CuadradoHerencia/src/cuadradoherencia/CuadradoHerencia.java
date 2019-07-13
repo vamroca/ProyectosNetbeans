@@ -38,8 +38,8 @@ public class CuadradoHerencia extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Graphics papel = panel.getGraphics();
-//        papel.fillRect(0, 0, 0, 150);
-//        papel.setColor(Color.white);
+        papel.setColor(Color.white);
+        papel.fillRect(0, 0, 150, 150);
         
         
         cuadrado.mostrar(papel);
@@ -64,6 +64,7 @@ public class CuadradoHerencia extends JFrame implements ActionListener {
 
         public void mostrar(Graphics papel) {
             tamaño = 50;
+            papel.setColor(Color.GREEN);
             papel.drawRect(x, y, tamaño, tamaño);
         }
 

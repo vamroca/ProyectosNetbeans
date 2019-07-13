@@ -56,8 +56,8 @@ public class NaveEspacial extends JFrame implements ActionListener {
             }
 
         }
-//        papel.setColor(Color.white);
-//        papel.fillRect(0, 0, 250, 250);
+        papel.setColor(Color.white);
+        papel.fillRect(0, 0, 250, 250);
         navesespaciales.mostrar(papel);
     }
 
@@ -89,6 +89,7 @@ public class NaveEspacial extends JFrame implements ActionListener {
         }
 
         public void mostrar(Graphics papel) {
+            papel.setColor(Color.PINK);
             papel.drawOval(x, y, 20, 20);
         }
     }
