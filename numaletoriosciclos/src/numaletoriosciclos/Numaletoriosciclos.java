@@ -29,6 +29,9 @@ public class Numaletoriosciclos extends JFrame implements ActionListener {
         panel.setPreferredSize(new Dimension(300, 162));
         panel.setBackground(Color.white);
         window.add(panel);
+        
+        JScrollPane paleDespla = new JScrollPane(panel);
+        window.add(paleDespla);
 
         boton = new JButton("Aceptar");
         window.add(boton);
