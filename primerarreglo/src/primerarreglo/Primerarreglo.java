@@ -4,12 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
+import java.util.*;
 
 public class Primerarreglo extends JFrame implements ActionListener {
 
     private JTextArea txtarea;
     private JButton btnaceptar;
-    int [] arreglos = new int[20];
+    int [] arreglo = new int[20];
 
     public static void main(String[] args) {
         Primerarreglo marco = new Primerarreglo();
@@ -33,6 +34,8 @@ public class Primerarreglo extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        
+        mostrar(arreglo);
 ////        int [] arreglo = new int[9];
 ////        final String nuevaLinea = "\n";
 ////        txtarea.setText("");
@@ -54,7 +57,7 @@ public class Primerarreglo extends JFrame implements ActionListener {
         final String nuevaLinea = "\n";
         txtarea.setText("");
         for (int i = 0; i < arreglo.length; i++) {
-            txtarea.append(Integer.toString(arreglo(i)) + nuevaLinea);
+            txtarea.append(Integer.toString(arreglo[i]) + nuevaLinea);
         }
     }
 
