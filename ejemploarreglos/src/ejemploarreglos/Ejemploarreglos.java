@@ -9,7 +9,8 @@ import java.util.*;
 public class Ejemploarreglos extends JFrame implements ActionListener {
 
     private JButton btnboton;
-    private JTextField txtposicion, txtdia, txtdescripcion, txtcalculo;
+    private JTextField txtposicion, txtdia, txtdescripcion, txtcalculo,
+            txtdescripcion2;
     private JLabel lblcover;
     private JTextArea txtarea;
     private int[] lluvia = {7, 8, 0, 4, 3, 8, 1};
@@ -47,10 +48,14 @@ public class Ejemploarreglos extends JFrame implements ActionListener {
 
         txtcalculo = new JTextField(23);
         window.add(txtcalculo);
+        
+        txtdescripcion2 = new JTextField(12);
+        window.add(txtdescripcion2);
     }
 
     public void actionPerformed(ActionEvent e) {
         nuevoValor();
+//        mostrar();
     }
 
     private void mostrar() {
@@ -71,6 +76,7 @@ public class Ejemploarreglos extends JFrame implements ActionListener {
         mostrar();
         mayor();
         calcular();
+        menor();
 //        nombreDias();
     }
 
@@ -92,6 +98,18 @@ public class Ejemploarreglos extends JFrame implements ActionListener {
             total = total + lluvia[i];
         }
         txtcalculo.setText("La precipitación total de esta semana es: " + Integer.toString(total));
+    }
+
+    private void menor() {
+        int menors;
+        menors = lluvia[0];
+        int i = 0;
+        for (int precipitacion = 0; i <= 6; i++) {
+            if (menors > lluvia[i]) {
+                menors = lluvia[i];
+            }
+        }
+        txtdescripcion2.setText("Valor mas alto es: " + Integer.toString(menors));
     }
 
 //    private void nombreDias() {

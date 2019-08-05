@@ -112,9 +112,9 @@ public class Nim extends JFrame implements ActionListener {
                 } else {
 
                     if ((click == btnreparitr)) {
-                        rs = r.nextInt(200) + 1;
-                        rs2 = r.nextInt(200) + 1;
-                        rs3 = r.nextInt(200) + 1;
+                        rs = r.nextInt(20) + 1;
+                        rs2 = r.nextInt(20) + 1;
+                        rs3 = r.nextInt(20) + 1;
                         txtpila1.setText(Integer.toString(rs));
                         txtpila2.setText(Integer.toString(rs2));
                         txtpila3.setText(Integer.toString(rs3));
@@ -133,15 +133,15 @@ public class Nim extends JFrame implements ActionListener {
                                 if (((click == btnmaquina && pila.equals("Pila 3")))) {
                                     txtpila3.setText(Integer.toString(total));
                                 } else {
-                                    if((click == newGame)){
+                                    if ((click == newGame)) {
                                         rs = 0;
                                         rs2 = 0;
                                         rs3 = 0;
                                         rs4 = 0;
-                                    txtpila1.setText(Integer.toString(rs));
-                                    txtpila2.setText(Integer.toString(rs2));
-                                    txtpila3.setText(Integer.toString(rs3));
-                                    txtresta.setText(Integer.toString(rs4));
+                                        txtpila1.setText(Integer.toString(rs));
+                                        txtpila2.setText(Integer.toString(rs2));
+                                        txtpila3.setText(Integer.toString(rs3));
+                                        txtresta.setText(Integer.toString(rs4));
                                     }
                                 }
                             }
